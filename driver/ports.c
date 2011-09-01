@@ -338,6 +338,12 @@ __interrupt void PORT2_ISR(void)
 		{
 			start_buzzer(1, CONV_MS_TO_TICKS(20), CONV_MS_TO_TICKS(150));
 		}
+
+        // If backlight is on, reset the timeout
+        if (sButton.backlight_status == 1)
+        {
+            sButton.backlight_timeout = 0;
+        }
 		
 		// Debounce delay 2
 		Timer0_A4_Delay(CONV_MS_TO_TICKS(BUTTONS_DEBOUNCE_TIME_OUT));
