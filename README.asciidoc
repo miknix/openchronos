@@ -1,0 +1,48 @@
+// vim: set syntax=asciidoc:
+
+miknix's openchronos master branch
+==================================
+
+About
+-----
+This is openchronos from my 'master' http://github.com/miknix/openchronos[branch]
+
+
+This development branch is a clone from the https://github.com/poelzi/OpenChronos/[poelzi] repository with
+regular merges of stable patches from my other development branches,
+namely the 'modular' and 'toolchain' branches.
+
+* The 'modular' branch contains several patches to make the code more modular and help adding new functionality.
+* The 'toolchain' branch contains patches to allow the code to be built with mspgcc (not mspgcc4).
+
+*Please have a look to the commit messages for more information!*
+
+Status
+------
+Openchronos from this branch should always be fully functional.
+
+Toolchain
+---------
+It was tested with the following:
+
+* cross-msp430/msp430-binutils-2.21.1
+* cross-msp430/msp430-gcc-4.5.3      '(it is NOT mspgcc4)'
+* cross-msp430/msp430-libc-20110612
+* cross-msp430/msp430mcu-20110613
+
+which was produced using Gentoo's crossdev.
+
+Difference to the TI Firmware
+-----------------------------
+ * More Features that can be configured with make config
+ * More modular, easier to develop, more code reuse.
+ * Builds with mspgcc '(not mspgcc4)'.
+ * Day of week
+ * Disable 12h support (saves space)
+ * Sleep Phase Clock
+** primary designed for http://github.com/poelzi/uberclock[uberclock]
+ * The wireless flashing starts differently:
+** select RFBSL, Press DOWN to unlock, Press # long to start 
+ * No BlueRobin support. BlueRobin is a closed source binary blob.
+ * Pressing STAR and UP long sets silent mode (no beep)
+
