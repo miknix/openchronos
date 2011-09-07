@@ -371,5 +371,7 @@ extern u8 * _itoa(u32 n, u8 digits, u8 blanks);
 extern u8 switch_seg(u8 line, u8 index1, u8 index2);
 
 void display_all_off(void);
-
+#ifdef ECO_DISPLAY 
+void eco_display(void); //ECO display
+#endif
 #endif // __DISPLAY_

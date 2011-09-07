@@ -403,6 +403,16 @@ __interrupt void TIMER0_A0_ISR(void)
 	}
 	
 	// -------------------------------------------------------------------
+	// Service modules that require 1/hour processing
+	if (sTime.drawFlag > 2) 
+	{
+		#ifdef ECO_DISPLAY	
+		request.flag.eco_display = 1; //ECO_display flag
+		#endif
+	}	
+		
+	
+	// -------------------------------------------------------------------
 	// Service modules that require 1/min processing
 	if (sTime.drawFlag >= 2) 
 	{

@@ -610,3 +610,23 @@ void display_all_off(void)
 		lcdptr++;
 	}
 }
+
+#ifdef ECO_DISPLAY
+// *************************************************************************************************
+// @fn          eco_display
+// @brief       Lowers the display frequency at night(19h-08h)
+// @param       none
+// @return      none
+// *************************************************************************************************
+void eco_display(void)
+{
+	if((sTime.hour>8)&&(sTime.hour<19))
+	{
+	    LCDBCTL0 = (LCDDIV0 + LCDDIV1 + LCDDIV2) | (LCDPRE0 + LCDPRE1) | LCD4MUX | LCDON; //day mode 512Hz
+	}
+	else
+	{
+	    LCDBCTL0 = (LCDDIV0 + LCDDIV1 + LCDDIV2 + LCDDIV3) | (LCDPRE0 + LCDPRE1) | LCD4MUX | LCDON; //night mode, freq. from the original ti frimware 256Hz
+	}
+}
+#endif
