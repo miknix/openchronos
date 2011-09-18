@@ -15,7 +15,9 @@ namely the 'modular' and 'toolchain' branches.
 * The 'modular' branch contains several patches to make the code more modular and help adding new functionality.
 * The 'toolchain' branch contains patches to allow the code to be built with mspgcc (not mspgcc4).
 
-*Please have a look to the commit messages for more information!*
+I also regularly merge patches from dobfek and anilgulecha repositories. Have a look bellow to see what's available in this branch.
+
+*Please also have a look to the commit messages for more information!*
 
 Status
 ------
@@ -35,10 +37,13 @@ which was produced using Gentoo's crossdev.
 Difference to the TI Firmware
 -----------------------------
  * More Features that can be configured with make config
- * More modular, easier to develop, more code reuse.
+ * More modular, easier to develop, more code reuse:
+   - Modular timer and display functions.
+	- Improved alarm.
  * Builds with mspgcc '(not mspgcc4)'.
  * Day of week
  * Disable 12h support (saves space)
+ * Economical display module.
  * Sleep Phase Clock
 ** primary designed for http://github.com/poelzi/uberclock[uberclock]
  * The wireless flashing starts differently:
