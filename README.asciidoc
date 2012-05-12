@@ -3,6 +3,11 @@
 miknix's openchronos master branch
 ==================================
 
+DEPRECATED
+----------
+
+*I joined efforts with other openchronos developers, the most up to date openchronos code can be found http://gitorious.org/openchronos[here]*
+
 About
 -----
 This is openchronos from my 'master' http://github.com/miknix/openchronos[branch]
